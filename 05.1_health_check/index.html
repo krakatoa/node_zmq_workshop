@@ -1,0 +1,16 @@
+<html lang='en'>
+  <head>
+    <title>Realtime work progress</title>
+    <script type="text/javascript" src='./faye-browser.js'></script>
+  </head>
+<body>
+<script type="text/javascript">
+  var randomPort = 8000 + Math.round(Math.random() * 2);
+  alert('Connected Faye client to http://127.0.0.1:' + randomPort);
+  var client = new Faye.Client('http://localhost:' + randomPort + '/faye');
+  var subscription = client.subscribe('/foo', function(message) {
+    console.log(JSON.stringify(message));
+  });
+</script>
+</body>
+</html>
