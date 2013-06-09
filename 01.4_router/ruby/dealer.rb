@@ -3,8 +3,8 @@ require 'ffi-rzmq'
 ctx = ZMQ::Context.new
 request = ctx.socket ZMQ::DEALER
 
-request.connect("tcp://127.0.0.1:6000")
-request.connect("tcp://127.0.0.1:6001")
+request.connect("tcp://127.0.0.1:8014")
+request.connect("tcp://127.0.0.1:8114")
 
 count = 0
 

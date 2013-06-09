@@ -4,7 +4,7 @@ var reply = zmq.socket("rep");
 
 reply.identity = 'worker2';
 
-reply.bind("tcp://127.0.0.1:6002", function(err) {
+reply.bind("tcp://127.0.0.1:8113", function(err) {
   if (err) throw err;
 
 });

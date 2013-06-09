@@ -4,7 +4,7 @@ ctx = ZMQ::Context.new
 
 frontend = ctx.socket ZMQ::ROUTER
 
-frontend.bind("tcp://127.0.0.1:6001")
+frontend.bind("tcp://127.0.0.1:8114")
 
 loop do
   msg = []
