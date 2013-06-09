@@ -21,10 +21,6 @@ setInterval(function() {
   //var t = request.send("msg nro. " + count++);
 }, 2000);
 
-request.on("error", function(err) {
-  console.log(err);
-});
-
 request.on("message", function(header, msg) {
   console.log("Response from: " + msg.toString());
 });
