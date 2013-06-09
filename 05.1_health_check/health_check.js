@@ -2,14 +2,14 @@ var zmq = require('zmq');
 
 var util = require('util');
 
-var worker = zmq.socket('push');
+var notify = zmq.socket('push');
 
 var id = process.argv[2];
 
-worker.connect('tcp://127.0.0.1:4001');
-worker.connect('tcp://127.0.0.1:4002');
+notify.connect('tcp://127.0.0.1:4001');
+notify.connect('tcp://127.0.0.1:4002');
 
-worker.identity = id;
+notify.identity = id;
 
 var count = 0;
 setInterval(function() {
@@ -18,6 +18,6 @@ setInterval(function() {
     report_n: count++,
     heap_used: process.memoryUsage().heapUsed 
   }
-  worker.send(JSON.stringify(msg));
+  notify.send(JSON.stringify(msg));
   console.log('queued: ' + JSON.stringify(msg));
 }, 2000);
