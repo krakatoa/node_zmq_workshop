@@ -11,7 +11,7 @@ request.reconnect_ivl = 1000;
 
 request.identity = 'request1';
 
-request.connect("tcp://127.0.0.1:7000");
+request.connect("tcp://127.0.0.1:8115");
 
 id = process.pid;
 count = 0;

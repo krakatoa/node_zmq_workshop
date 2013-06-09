@@ -6,7 +6,7 @@ var dealer = zmq.socket('dealer');
 router.identity = 'router1';
 dealer.identity = 'dealer1';
 
-router.bind('tcp://127.0.0.1:7000', function(err) {
+router.bind('tcp://127.0.0.1:8115', function(err) {
   if (err) throw err;
 
   router.on('message', function(conn_id, delimiter, data) {
@@ -18,7 +18,7 @@ router.bind('tcp://127.0.0.1:7000', function(err) {
   });
 });
 
-dealer.bind('tcp://127.0.0.1:7001', function(err) {
+dealer.bind('tcp://127.0.0.1:8015', function(err) {
   if (err) throw err;
 
   dealer.on('message', function(conn_id, delimiter, data) {

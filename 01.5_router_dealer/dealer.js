@@ -5,9 +5,9 @@ var request = zmq.socket("dealer");
 request.linger = 1000;
 request.reconnect_ivl = 1000;
 
-request.identity = 'request2';
+request.identity = "dealer-" + process.pid;
 
-request.connect("tcp://127.0.0.1:7000");
+request.connect("tcp://127.0.0.1:8115");
 
 id = process.pid;
 count = 0;
@@ -19,7 +19,7 @@ setInterval(function() {
   request.send([new Buffer([]), "[" + count++ + "]"])
   //var t = request.send(new Buffer([]), zmq.ZMQ_SNDMORE);
   //var t = request.send("msg nro. " + count++);
-}, 1000);
+}, 2000);
 
 request.on("error", function(err) {
   console.log(err);
