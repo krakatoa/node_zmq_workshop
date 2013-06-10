@@ -6,9 +6,12 @@ reply.bind("tcp://127.0.0.1:8012", function(err) {
   if (err) throw err;
 
   reply.on('message', function() {
-    var messages = Array.prototype.slice.call(arguments);
-
     console.log("Received multipart message:");
+    for(var key in arguments) {
+      console.log("Part " + key + ": " + arguments[key]);
+    };
+    
+    var messages = Array.prototype.slice.call(arguments);
     messages.forEach(function(msg) {
       console.log("msgpart: " + msg);
     });
