@@ -12,5 +12,5 @@ reply.on('message', function(msg) {
   console.log("Received: " + msg.toString());
   setTimeout(function() {
     reply.send("worker2" + msg);
-  }, 1000);
+  }, 3000);
 })
