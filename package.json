@@ -1,0 +1,22 @@
+{
+  "name": "node_zmq_workshop",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/krakatoa/node_zmq_workshop.git"
+  },
+  "author": "Fernando Dario Alonso",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/krakatoa/node_zmq_workshop/issues"
+  },
+  "homepage": "https://github.com/krakatoa/node_zmq_workshop",
+  "dependencies": {
+    "zmq": "^2.7.0"
+  }
+}
